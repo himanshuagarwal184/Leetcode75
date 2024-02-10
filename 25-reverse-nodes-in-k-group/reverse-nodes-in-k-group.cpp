@@ -22,17 +22,12 @@ public:
             temp=temp->next;
             n++;
         }
-        
-        //cout<<n;
         int j=n/k;
         for(int i=0;i<j;i++)
         {
             reverse(arr.begin()+i*k,arr.begin()+i*k+k);
         }
-        for(auto x:arr)
-        {
-            cout<<x->val<<" ";
-        }
+
         temp=arr[0];
         for(int i=0;i<n;i++)
         {
