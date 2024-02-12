@@ -1,27 +1,14 @@
 class Solution {
 public:
-    bool uniqueOccurrences(vector<int>& arr) 
-    {
-        multiset<int>a;
-        unordered_set<int>b;
-        for(auto x:arr)
-        {
-            a.insert(x);
-            b.insert(x);
+    bool uniqueOccurrences(vector<int>& arr) {
+        unordered_map<int,int>m;
+        for(int ele:arr){
+            m[ele]++;
         }
-        set<int>t;
-        for(auto x:b)
-        {
-            int ct=a.count(x);
-            if(t.count(ct)==0)
-            {
-                t.insert(ct);
-            }
-            else if(t.count(ct)==1)
-            {
-                return false;
-            }
+        unordered_set<int>mset;
+        for(auto[key,value] : m){
+            mset.insert(value);
         }
-        return true;
+        return m.size()==mset.size();
     }
 };
