@@ -4,9 +4,9 @@ public:
     {
         int n=grid.size(),count=0;
         map<vector<int>,int>mp;
-        for(int row=0;row<n;row++)
+        for(vector<int> a:grid)
         {
-            mp[grid[row]]++;
+            mp[a]++;
         }    
         for(int c=0;c<n;c++)
         {
