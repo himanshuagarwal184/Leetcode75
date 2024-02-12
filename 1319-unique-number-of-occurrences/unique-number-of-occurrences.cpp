@@ -3,7 +3,7 @@ public:
     bool uniqueOccurrences(vector<int>& arr) 
     {
         multiset<int>a;
-        set<int>b;
+        unordered_set<int>b;
         for(auto x:arr)
         {
             a.insert(x);
