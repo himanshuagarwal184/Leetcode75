@@ -29,15 +29,11 @@ public:
                     }
                 }
             }
-            else if(c==0)
+            else
             {
                 ans+=ch;
             }
-            else if(c>0 && ch!='*')
-            {
-                c--;
-                // stk.pop();
-            }
+         
             
         }
         // cout<<ans;
