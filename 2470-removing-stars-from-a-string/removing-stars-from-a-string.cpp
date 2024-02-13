@@ -4,39 +4,21 @@ public:
         stack<char>stk;
         for(char x:s)
         {
-            stk.push(x);
-        }
-        int c=0;
-        string ans="";
-        while(!stk.empty())
-        {
-            char ch=stk.top();
-            stk.pop();
-            if(ch=='*')
+            if(x=='*')
             {
-                c++;
-                while(c>0)
-                {
-                    if(stk.top()=='*')
-                    {
-                        c++;
-                        
-                    }
-                    else
-                    {
-                        c--;   
-                    }
-                    stk.pop();
-                }
+                stk.pop();
             }
             else
             {
-                ans+=ch;
+                stk.push(x);
             }
-         
-            
         }
-        // cout<<ans;
+        string ans="";
+        while(!stk.empty())
+        {
+            ans+=stk.top();
+            stk.pop();
+        }
         reverse(ans.begin(),ans.end());
         return ans;
     }
