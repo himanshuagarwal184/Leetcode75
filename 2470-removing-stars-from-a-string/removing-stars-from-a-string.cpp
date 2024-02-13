@@ -20,13 +20,13 @@ public:
                     if(stk.top()=='*')
                     {
                         c++;
-                        stk.pop();
+                        
                     }
                     else
                     {
-                        c--;
-                        stk.pop();
+                        c--;   
                     }
+                    stk.pop();
                 }
             }
             else
