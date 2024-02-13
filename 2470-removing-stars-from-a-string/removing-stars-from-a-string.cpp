@@ -8,10 +8,9 @@ public:
         }
         int c=0;
         string ans="";
-        char ch;
         while(!stk.empty())
         {
-            ch=stk.top();
+            char ch=stk.top();
             stk.pop();
             if(ch=='*')
             {
