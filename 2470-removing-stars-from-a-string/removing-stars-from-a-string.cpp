@@ -15,6 +15,19 @@ public:
             if(ch=='*')
             {
                 c++;
+                while(c>0)
+                {
+                    if(stk.top()=='*')
+                    {
+                        c++;
+                        stk.pop();
+                    }
+                    else
+                    {
+                        c--;
+                        stk.pop();
+                    }
+                }
             }
             else if(c==0)
             {
