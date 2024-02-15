@@ -17,10 +17,8 @@ public:
         stack<TreeNode*> s;
         vector<int>res;
         TreeNode *curr=root;
-        int x=0;
         while(curr!=NULL || s.empty()==false)
         {
-           // cout<<"h";
             while(curr!=NULL)
             {
                 s.push(curr);
