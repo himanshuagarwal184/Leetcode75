@@ -17,6 +17,6 @@ public:
         {
             return 0;
         }
-        return max(1+maxDepth(root->left),1+maxDepth(root->right));   
+        return max(maxDepth(root->left),maxDepth(root->right))+1;   
     }
 };
