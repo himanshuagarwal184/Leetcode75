@@ -23,7 +23,6 @@ public:
         {
             return "Radiant";
         }
-        int i=0;
         while(!rad.empty() && !dire.empty())
         {
             if(rad.front() < dire.front())
