@@ -16,7 +16,7 @@ public:
             {
                 return head;
             }
-        ListNode *temp=head,*t=head->next,*temp2=head,*t2=head->next;
+        ListNode *temp=head,*t=head->next,*t2=head->next;
         while(temp->next!=NULL && t->next!=NULL)
         {
             temp->next=t->next;
