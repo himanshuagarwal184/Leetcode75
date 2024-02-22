@@ -19,7 +19,7 @@ public:
     }
     int minReorder(int n, vector<vector<int>>& connections) 
     {
-        unordered_map<int,vector<pair<int,int>>> graph;
+        unordered_map<int,vector<pair<int,int>>> graph(n);
 
         for(vector<int> x: connections)
         {
