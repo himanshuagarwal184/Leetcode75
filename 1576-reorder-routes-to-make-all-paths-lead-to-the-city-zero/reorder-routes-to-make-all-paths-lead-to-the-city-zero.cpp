@@ -21,7 +21,7 @@ public:
     {
         unordered_map<int,vector<pair<int,int>>> graph;
 
-        for(auto &x: connections)
+        for(auto x: connections)
         {
             int a=x[0];
             int b=x[1];
