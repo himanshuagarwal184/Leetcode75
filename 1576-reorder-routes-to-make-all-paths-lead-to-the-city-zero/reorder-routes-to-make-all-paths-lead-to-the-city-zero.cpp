@@ -3,7 +3,7 @@ public:
     int count=0;
     void dfs(int u,int par,unordered_map<int,vector<pair<int,int>>> &graph)
     {
-        for(pair<int,int> &p:graph[u])
+        for(pair<int,int> p:graph[u])
         {
             int v=p.first;
             int check= p.second;
@@ -21,7 +21,7 @@ public:
     {
         unordered_map<int,vector<pair<int,int>>> graph;
 
-        for(vector<int> &x: connections)
+        for(vector<int> x: connections)
         {
             int a=x[0];
             int b=x[1];
