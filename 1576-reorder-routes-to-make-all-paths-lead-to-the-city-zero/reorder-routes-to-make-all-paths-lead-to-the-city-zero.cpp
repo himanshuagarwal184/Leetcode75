@@ -1,35 +1,22 @@
 class Solution {
 public:
-    int count=0;
-    void dfs(int u,int par,unordered_map<int,vector<pair<int,int>>> &graph)
-    {
-        for(pair<int,int> p:graph[u])
-        {
-            int v=p.first;
-            int check= p.second;
-            if(v!=par)
-            {
-                if(check==1)
-                {
-                    count++;
-                }
-                dfs(v,u,graph);
+    int count = 0;
+    void dfs(int node, int parent, vector<vector<pair<int, int>>>& adj) {
+        for (auto& [neighbor, sign] : adj[node]) {
+            if (neighbor != parent) {
+                count += sign;
+                dfs(neighbor, node, adj);
             }
         }
     }
-    int minReorder(int n, vector<vector<int>>& connections) 
-    {
-        unordered_map<int,vector<pair<int,int>>> graph;
 
-        for(vector<int> x: connections)
-        {
-            int a=x[0];
-            int b=x[1];
-            graph[a].push_back({b,1});
-            graph[b].push_back({a,0});
+    int minReorder(int n, vector<vector<int>>& connections) {
+        vector<vector<pair<int, int>>> adj(n);
+        for (auto& connection : connections) {
+            adj[connection[0]].push_back({connection[1], 1});
+            adj[connection[1]].push_back({connection[0], 0});
         }
-
-        dfs(0,-1,graph);
+        dfs(0, -1, adj);
         return count;
     }
 };
