@@ -4,19 +4,20 @@ public:
     {
         int n=nums.size();
         int x=0;
-        for(int i=0;i<n;i++)
+        int i=0,j=0;
+        int prod=1;
+       if(k<=1) return 0;
+        while(i<n)
         {
-            int pro=1;
-            for(int j=i;j<n;j++)
+            prod*=nums[i];
+            while(prod>=k)
             {
-                pro*=nums[j];
-                if(pro>k-1)
-                {
-                    break;
-                }
-                x++;
+                prod/=nums[j++];
             }
-        }   
+                
+            x+=1+(i-j);
+            i++;
+        }
         return x;
     }
 };
