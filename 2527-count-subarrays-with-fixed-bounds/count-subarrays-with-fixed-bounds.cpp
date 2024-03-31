@@ -13,14 +13,8 @@ public:
                 l=r+1;
                 continue;
             }
-            if(x==maxK)
-            {
-                maxx=r;
-            }
-            if(x==minK)
-            {
-                minn=r;
-            }
+            if(x==maxK) maxx=r;
+            if(x==minK) minn=r;
             res+=max((min(maxx,minn)-l+1),0);
         }
         return res;
