@@ -9,14 +9,15 @@ public:
         {
             if(abs(nums[i]) >= abs(nums[j]))
             {
-                res[curr--]=nums[i]*nums[i];
+                res[curr]=nums[i]*nums[i];
                 i++;
             }
             else
             {
-                res[curr--]=nums[j]*nums[j];
+                res[curr]=nums[j]*nums[j];
                 j--;
             }
+            curr--;
         }   
         return res;
     }
