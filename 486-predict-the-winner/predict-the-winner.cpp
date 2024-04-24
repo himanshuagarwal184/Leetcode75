@@ -1,4 +1,4 @@
-class Solution {
+class Solution { // TABULATION SOLUTION
 public:
     bool predictTheWinner(vector<int>& nums)
     {
