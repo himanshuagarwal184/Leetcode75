@@ -58,9 +58,7 @@ public:
     }
 
     void calculateHistogram(vector<vector<char>> mat,vector<vector<int>> &dp)
-    {
-        // vector<vector<int>>ret(dp.size(),vector<int>(dp[0].size(),0));
-        
+    {      
         for(int i=0;i<dp[0].size();i++)
         {
             if(mat[0][i]=='1')
@@ -86,6 +84,7 @@ public:
                 }
             }
         }
+        
     }
 
     
@@ -97,6 +96,7 @@ public:
         // cout<<m<<n;
         vector<vector<int>>dp (m,vector<int>(n,0));
         calculateHistogram(matrix,dp);
+        matrix.clear();
         for(int i=0;i<dp.size();i++)
         {
             for(int j=0;j<dp[i].size();j++)
