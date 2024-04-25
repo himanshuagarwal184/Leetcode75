@@ -4,12 +4,13 @@ public:
     MyLinkedList() {
     }
     int get(int index) {
-      for(int i=0;i<ans.size();i++){
-          if(i==index)
-           return ans[i];
-      }   
+      if(index >= ans.size()){
         return -1;
-    }
+
+      }
+      return ans[index];
+      }   
+    
     void addAtHead(int val) {
     ans.insert(ans.begin(),val);
     }
