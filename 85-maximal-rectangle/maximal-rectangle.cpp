@@ -57,7 +57,7 @@ public:
         return area;
     }
 
-    void calculateHistogram(vector<vector<char>> mat,vector<vector<int>> &dp)
+    int calculateHistogram(vector<vector<char>> mat,vector<vector<int>> &dp)
     {      
         for(int i=0;i<dp[0].size();i++)
         {
@@ -69,6 +69,7 @@ public:
                 dp[0][i]=0;
             }
         }
+        int maxx=largestRectangleArea(dp[0]);
 
         for(int i=1;i<dp.size();i++)
         {
@@ -83,7 +84,9 @@ public:
                     dp[i][j]=0;
                 }
             }
+            maxx = max(largestRectangleArea(dp[i]),maxx);
         }
+        return maxx;
         
     }
 
@@ -93,29 +96,9 @@ public:
     {
         int m=matrix.size();
         int n=matrix[0].size();
-        // cout<<m<<n;
-        vector<vector<int>>dp (m,vector<int>(n,0));
-        calculateHistogram(matrix,dp);
-          for (int i = 0; i < m; i++) {
-        matrix[i].clear(); // remove all elements from each inner vector
-        matrix[i].shrink_to_fit(); // free up memory used by each inner vector
-    }
 
-        matrix.clear();
-        for(int i=0;i<dp.size();i++)
-        {
-            for(int j=0;j<dp[i].size();j++)
-            {
-                cout<<dp[i][j]<<" ";
-            }
-            cout<<endl;
-        }
-        int maxx=0;
-    for(int i=0;i<dp.size();i++)
-    {
-        vector<int>s = dp[i];
-        maxx = max(largestRectangleArea(s),maxx);
-    }
-    return maxx;      
+        vector<vector<int>>dp (m,vector<int>(n,0));
+        return calculateHistogram(matrix,dp);
+   
     }
 };
