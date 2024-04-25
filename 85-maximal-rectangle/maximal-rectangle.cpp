@@ -96,6 +96,11 @@ public:
         // cout<<m<<n;
         vector<vector<int>>dp (m,vector<int>(n,0));
         calculateHistogram(matrix,dp);
+          for (int i = 0; i < m; i++) {
+        matrix[i].clear(); // remove all elements from each inner vector
+        matrix[i].shrink_to_fit(); // free up memory used by each inner vector
+    }
+
         matrix.clear();
         for(int i=0;i<dp.size();i++)
         {
