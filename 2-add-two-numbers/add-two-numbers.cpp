@@ -14,7 +14,7 @@ public:
     {
         ListNode *dummy = new ListNode(-1);
         int carry=0;
-        ListNode *t1=l1,*t2=l2,*curr=dummy;
+        ListNode *curr=dummy;
         while(l1!=NULL || l2!=NULL)
         {
             int x=carry;
@@ -29,15 +29,15 @@ public:
             ListNode *q = new ListNode(x);
             curr->next=q;
             curr=curr->next;
-            if(l1!=NULL){
+            if(l1){
             l1=l1->next;}
-            if(l2!=NULL){
+            if(l2){
             l2=l2->next;}
         }    
         if(carry!=0){
             ListNode *q = new ListNode(carry);
             curr->next=q;
-            curr=curr->next;
+            // curr=curr->next;
         }
         return dummy->next;
     }
