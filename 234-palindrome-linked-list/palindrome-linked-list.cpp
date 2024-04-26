@@ -13,23 +13,19 @@ class Solution {
 public:
     bool isPalindrome(ListNode* head) {
         vector<int>a,b;
+        string x="";
         while(head!=NULL)
         {
+            x+=to_string(head->val);
             a.push_back(head->val);
             head=head->next;
         }
-        b=a;
-        reverse(b.begin(),b.end());
-        for(int i=0,j=0;i<a.size();i++,j++)
+        string y=x;
+        reverse(x.begin(),x.end());
+        cout<<y<<" "<<x;
+        if(x.compare(y))
         {
-            if(a[i]==b[j])
-            {
-                continue;
-            }
-            else
-            {
-                return false;
-            }
+            return false;
         }
         return true;
     }
