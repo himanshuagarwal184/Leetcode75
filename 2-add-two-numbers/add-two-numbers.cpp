@@ -17,15 +17,12 @@ public:
         ListNode *t1=l1,*t2=l2,*curr=dummy;
         while(l1!=NULL || l2!=NULL)
         {
-            int x;
-            if(l1==NULL){
-            x= l2->val + carry;
+            int x=carry;
+            if(l1){
+            x+= l1->val;
             }
-            else if(l2==NULL){
-                x=l1->val + carry;
-            }
-            else{
-            x=l1->val + l2->val + carry;
+            if(l2){
+                x+=l2->val;
             }
             carry = x/10;
             x= x%10;
