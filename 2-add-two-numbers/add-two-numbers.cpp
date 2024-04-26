@@ -37,7 +37,7 @@ public:
         if(carry!=0){
             ListNode *q = new ListNode(carry);
             curr->next=q;
-            // curr=curr->next;
+            curr=curr->next;
         }
         return dummy->next;
     }
