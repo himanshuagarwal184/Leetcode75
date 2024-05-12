@@ -11,7 +11,6 @@ public:
         for(int i=0;i<s.length();i++)
         {
             int m =s[i]-'a';
-            cout<<count[m];
             if(count[m]==1)
             {
                 return i;
