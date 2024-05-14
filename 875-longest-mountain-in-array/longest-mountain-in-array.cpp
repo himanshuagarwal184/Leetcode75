@@ -19,8 +19,14 @@ public:
             if((arr[i] > arr[i-1]) && (arr[i] > arr[i+1]))
             {
                 int j=i;
-                while(j>0 && arr[j] > arr[j-1]) j--;
-                while(i<n-1 && arr[i] > arr[i+1]) i++;
+                while(j>0 && arr[j] > arr[j-1])
+                {
+                    j--;
+                }
+                while(i<n-1 && arr[i] > arr[i+1])
+                {
+                    i++;
+                }
                 maxx = max(i-j+1,maxx);
             }
             else{
