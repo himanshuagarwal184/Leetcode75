@@ -4,10 +4,14 @@ public:
     
     int findDuplicate(vector<int>& nums) 
     {
-        sort(nums.begin(),nums.end());
-        for(int i=0;i<nums.size()-1;i++)
+        unordered_map<int,int>um;
+        for(int i=0;i<nums.size();i++)
         {
-            if(nums[i]==nums[i+1])
+            if(!um[nums[i]])
+            {
+                um[nums[i]] = 1;
+            }
+            else
             {
                 return nums[i];
             }
