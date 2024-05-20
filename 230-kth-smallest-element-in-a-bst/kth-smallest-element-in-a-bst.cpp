@@ -31,10 +31,6 @@ public:
         vector<int>inorde;
         int n=0,ans;
         inorder(root,n,ans,k);
-        // for(int i=0;i<inorde.size();i++)
-        // {
-        //     cout<<inorde[i]<<" ";
-        // }   
         return ans;
     }
 };
