@@ -4,6 +4,7 @@ public:
     {
         int maxLen = INT_MIN;
         int n=s.length();
+        int m;
         string ans="";
         vector<vector<int>>dp(n,vector<int>(n,0));
         for(int i=0;i<n;i++)
@@ -37,11 +38,12 @@ public:
                         if(k-j+1 > maxLen)
                         {
                             maxLen = k-j+1;
-                            ans = s.substr(j,maxLen);
+                            m=j;
+                            // ans = s.substr(j,maxLen);
                         }
                     }
             }
         }
-        return ans;
+        return s.substr(m,maxLen);
     }
 };
